@@ -1,42 +1,112 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.wrapper {
+
+  display: flex;
+  flex-wrap: no-wrap;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+}
+
+.utilization {
+
+  background-color: rgb(227, 227, 227);
+  border-radius: 20px;
+
+  width: 27.5vw;
+  height: 82.5vh;
+
+  margin: 1vw;
+  padding: 1.6vw;
+  padding-top: 3vw;
+
+}
+
+.utilText {
+
+  color: black;
+  transform: translateY(19.5vh);
   text-align: center;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.gauge {
+
+  transform: translateY(80%);
+
+  background-color: white;
+  border-radius: 30px;
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.averageVal {
+
+  display: block;
+
+  background-color: rgb(227, 227, 227);
+  border-radius: 20px;
+
+  width: 27.5vw;
+  height: 82.5vh;
+
+  margin: 1vw;
+  padding: 1.6vw;
+  padding-top: 3vw;
+
+}
+
+.statusWrapper {
+
+  display: grid;
+  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+
+}
+
+.status {
+  background-color: rgb(227, 227, 227);
+
+  transform: translateX(0%);
+  text-align: center;
+
+  width: 94%;
+  height: 200px;
+  margin: 1vw;
+
+  border-radius: 15px;
+}
+
+@keyframes ZoomNRotanimation {
+  0% {
+      transform: scale(1,1) rotate(-10deg);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+      transform: scale(1.1,1.1) rotate(10deg);
+  }
+  100% {
+      transform: scale(1,1) rotate(-10deg);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.livebutton {
+
+  animation: ZoomNRotanimation 1.2s infinite ;
+
+}
+
+@keyframes Rotanimation {
+  0% {
+      transform: rotate(-15deg) translateY(40%);
+  }
+  50% {
+      transform: rotate(15deg) translateY(40%);
+  }
+  100% {
+      transform: rotate(-15deg) translateY(40%);
   }
 }
 
-.card {
-  padding: 2em;
-}
+.statusIndicator {
 
-.read-the-docs {
-  color: #888;
+  animation: Rotanimation 1.2s infinite ;
+
 }
